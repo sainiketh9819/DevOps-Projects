@@ -19,13 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(build.sourcesdirectory)/output'
+    SourceFolder: '$(build.artifactstagingdirectory)'
     Contents: '**/*'
     TargetFolder: '$(build.artifactstagingdirectory)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
 - script: ls -R $(Build.ArtifactStagingDirectory)
   displayName: 'List artifact files'
