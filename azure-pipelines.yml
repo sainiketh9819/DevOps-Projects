@@ -19,7 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
-    Contents: '**/*.war'
+    SourceFolder: '$(build.sourcesdirectory)/output'
+    Contents: '**/*'
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
