@@ -22,5 +22,9 @@ steps:
     SourceFolder: '$(build.artifactstagingdirectory)'
     Contents: '**/*'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
 - script: ls -R $(Build.ArtifactStagingDirectory)
   displayName: 'List artifact files'
