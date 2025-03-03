@@ -19,7 +19,7 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(build.artifactstagingdirectory)'
+    SourceFolder: '$(build.sourcesdirectorydirectory)/output'
     Contents: '**/*'
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
